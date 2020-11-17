@@ -18,6 +18,241 @@ AudioPluginAudioProcessor::AudioPluginAudioProcessor()
 	CloudSeed::FastSin::Init();
     reverb.ClearBuffers(); // clear buffers before we start do dsp stuff.
   
+	     
+	     
+	     
+    // Add Juce Paramter for all Reverb Parameters (used Chorus Delay Preset)
+    // https://github.com/ValdemarOrn/CloudSeed/blob/master/Factory%20Programs/Chorus%20Delay.json
+
+    
+    
+    addParameter (inputMix = new juce::AudioParameterFloat ("inputMix", // parameter ID
+                                                              "InputMix", // parameter name
+                                                              juce::NormalisableRange<float> (0.0f, 1.0f), // parameter range
+                                                              0.0f));
+    addParameter (preDelay = new juce::AudioParameterFloat ("preDelay", // parameter ID
+                                                              "PreDelay", // parameter name
+                                                              juce::NormalisableRange<float> (0.0f, 1.0f), // parameter range
+                                                              0.07f));
+    addParameter (lowPass = new juce::AudioParameterFloat ("lowPass", // parameter ID
+                                                              "LowPass", // parameter name
+                                                              juce::NormalisableRange<float> (0.0f, 1.0f), // parameter range
+                                                              0.29000008106231689f));
+    addParameter (highPass = new juce::AudioParameterFloat ("highPass", // parameter ID
+                                                              "HighPass", // parameter name
+                                                              juce::NormalisableRange<float> (0.0f, 1.0f), // parameter range
+                                                              0.0f));
+
+    
+    
+    addParameter (tapCount = new juce::AudioParameterFloat ("tapCount", // parameter ID
+                                                              "TapCount", // parameter name
+                                                              juce::NormalisableRange<float> (0.0f, 1.0f), // parameter range
+                                                              0.36499997973442078f));
+    addParameter (tapLength = new juce::AudioParameterFloat ("tapLength", // parameter ID
+                                                              "TapLength", // parameter name
+                                                              juce::NormalisableRange<float> (0.0f, 1.0f), // parameter range
+                                                              1.0f));
+    addParameter (tapGain = new juce::AudioParameterFloat ("tapGain", // parameter ID
+                                                              "TapGain", // parameter name
+                                                              juce::NormalisableRange<float> (0.0f, 1.0f), // parameter range
+                                                              1.0f));
+    addParameter (tapDecay = new juce::AudioParameterFloat ("tapDecay", // parameter ID
+                                                              "TapDecay", // parameter name
+                                                              juce::NormalisableRange<float> (0.0f, 1.0f), // parameter range
+                                                              0.86500012874603271));
+    
+    
+    
+    addParameter (diffusionEnabled = new juce::AudioParameterFloat ("diffusionEnabled", // parameter ID
+                                                              "DiffusionEnabled", // parameter name
+                                                              juce::NormalisableRange<float> (0.0f, 1.0f), // parameter range
+                                                              1.0f));
+    addParameter (diffusionStages = new juce::AudioParameterFloat ("diffusionStages", // parameter ID
+                                                              "DiffusionStages", // parameter name
+                                                              juce::NormalisableRange<float> (0.0f, 1.0f), // parameter range
+                                                              0.4285714328289032f));
+    addParameter (diffusionDelay = new juce::AudioParameterFloat ("diffusionDelay", // parameter ID
+                                                              "DiffusionDelay", // parameter name
+                                                              juce::NormalisableRange<float> (0.0f, 1.0f), // parameter range
+                                                              0.43500006198883057f));
+    addParameter (diffusionFeedback = new juce::AudioParameterFloat ("diffusionFeedback", // parameter ID
+                                                              "DiffusionFeedback", // parameter name
+                                                              juce::NormalisableRange<float> (0.0f, 1.0f), // parameter range
+                                                              0.725000262260437f));
+    addParameter (earlyDiffusionModAmount = new juce::AudioParameterFloat ("earlyDiffusionModAmount", // parameter ID
+                                                              "EarlyDiffusionModAmount", // parameter name
+                                                              juce::NormalisableRange<float> (0.0f, 1.0f), // parameter range
+                                                              0.50000005960464478f));
+    addParameter (earlyDiffusionModRate = new juce::AudioParameterFloat ("earlyDiffusionModRate", // parameter ID
+                                                              "EarlyDiffusionModRate", // parameter name
+                                                              juce::NormalisableRange<float> (0.0f, 1.0f), // parameter range
+                                                              0.42500010132789612f));
+    
+    
+    
+    
+    addParameter (lineCount = new juce::AudioParameterFloat ("lineCount", // parameter ID
+                                                              "LineCount", // parameter name
+                                                              juce::NormalisableRange<float> (0.0f, 1.0f), // parameter range
+                                                              1.0f));
+    addParameter (lineDelay = new juce::AudioParameterFloat ("lineDelay", // parameter ID
+                                                              "LineDelay", // parameter name
+                                                              juce::NormalisableRange<float> (0.0f, 1.0f), // parameter range
+                                                              0.68499988317489624f));
+    addParameter (lineDecay = new juce::AudioParameterFloat ("lineDecay", // parameter ID
+                                                              "LineDecay", // parameter name
+                                                              juce::NormalisableRange<float> (0.0f, 1.0f), // parameter range
+                                                              0.68000012636184692f));
+    addParameter (lineModAmount = new juce::AudioParameterFloat ("lineModAmount", // parameter ID
+                                                              "LineModAmount", // parameter name
+                                                              juce::NormalisableRange<float> (0.0f, 1.0f), // parameter range
+                                                              0.59000003337860107f));
+    addParameter (lineModRate = new juce::AudioParameterFloat ("lineModRate", // parameter ID
+                                                              "LineModRate", // parameter name
+                                                              juce::NormalisableRange<float> (0.0f, 1.0f), // parameter range
+                                                              0.46999993920326233f));
+
+    
+    addParameter (lateDiffusionEnabled = new juce::AudioParameterFloat ("lateDiffusionEnabled", // parameter ID
+                                                              "LateDiffusionEnabled", // parameter name
+                                                              juce::NormalisableRange<float> (0.0f, 1.0f), // parameter range
+                                                              1.0f));
+    addParameter (lateDiffusionStages = new juce::AudioParameterFloat ("lateDiffusionStages", // parameter ID
+                                                              "LateDiffusionStages", // parameter name
+                                                              juce::NormalisableRange<float> (0.0f, 1.0f), // parameter range
+                                                              0.28571429848670959f));
+    addParameter (lateDiffusionDelay = new juce::AudioParameterFloat ("lateDiffusionDelay", // parameter ID
+                                                              "LateDiffusionDelay", // parameter name
+                                                              juce::NormalisableRange<float> (0.0f, 1.0f), // parameter range
+                                                              0.54499995708465576f));
+    addParameter (lateDiffusionFeedback = new juce::AudioParameterFloat ("lateDiffusionFeedback", // parameter ID
+                                                              "LateDiffusionFeedback", // parameter name
+                                                              juce::NormalisableRange<float> (0.0f, 1.0f), // parameter range
+                                                              0.65999996662139893f));
+    addParameter (lateDiffusionModAmount = new juce::AudioParameterFloat ("lateDiffusionModAmount", // parameter ID
+                                                              "LateDiffusionModAmount", // parameter name
+                                                              juce::NormalisableRange<float> (0.0f, 1.0f), // parameter range
+                                                              0.619999885559082f));
+    addParameter (lateDiffusionModRate = new juce::AudioParameterFloat ("lateDiffusionModRate", // parameter ID
+                                                              "LateDiffusionModRate", // parameter name
+                                                              juce::NormalisableRange<float> (0.0f, 1.0f), // parameter range
+                                                              0.42500019073486328f));
+
+
+    
+    
+    
+    
+    addParameter (postLowShelfGain = new juce::AudioParameterFloat ("postLowShelfGain", // parameter ID
+                                                              "PostLowShelfGain", // parameter name
+                                                              juce::NormalisableRange<float> (0.0f, 1.0f), // parameter range
+                                                              0.5199999213218689f));
+    addParameter (postLowShelfFrequency = new juce::AudioParameterFloat ("postLowShelfFrequency", // parameter ID
+                                                              "PostLowShelfFrequency", // parameter name
+                                                              juce::NormalisableRange<float> (0.0f, 1.0f), // parameter range
+                                                              0.31499990820884705f));
+    addParameter (postHighShelfGain = new juce::AudioParameterFloat ("postHighShelfGain", // parameter ID
+                                                              "PostHighShelfGain", // parameter name
+                                                              juce::NormalisableRange<float> (0.0f, 1.0f), // parameter range
+                                                              0.83500003814697266f));
+    addParameter (postHighShelfFrequency = new juce::AudioParameterFloat ("postHighShelfFrequency", // parameter ID
+                                                              "PostHighShelfFrequency", // parameter name
+                                                              juce::NormalisableRange<float> (0.0f, 1.0f), // parameter range
+                                                              0.73000013828277588f));
+    addParameter (postCutoffFrequency = new juce::AudioParameterFloat ("postCutoffFrequency", // parameter ID
+                                                              "PostCutoffFrequency", // parameter name
+                                                              juce::NormalisableRange<float> (0.0f, 1.0f), // parameter range
+                                                              0.73499983549118042f));
+
+ 
+    
+ 
+    
+        
+    addParameter (tapSeed = new juce::AudioParameterFloat ("tapSeed", // parameter ID
+                                                              "TapSeed", // parameter name
+                                                              juce::NormalisableRange<float> (0.0f, 1.0f), // parameter range
+                                                              0.0011500000255182385f));
+    addParameter (diffusionSeed = new juce::AudioParameterFloat ("diffusionSeed", // parameter ID
+                                                              "DiffusionSeed", // parameter name
+                                                              juce::NormalisableRange<float> (0.0f, 1.0f), // parameter range
+                                                              0.00018899999849963933f));
+    addParameter (delaySeed = new juce::AudioParameterFloat ("delaySeed", // parameter ID
+                                                              "DelaySeed", // parameter name
+                                                              juce::NormalisableRange<float> (0.0f, 1.0f), // parameter range
+                                                              0.00034699999378062785f));
+    addParameter (postDiffusionSeed = new juce::AudioParameterFloat ("postDiffusionSeed", // parameter ID
+                                                              "PostDiffusionSeed", // parameter name
+                                                              juce::NormalisableRange<float> (0.0f, 1.0f), // parameter range
+                                                              0.00050099997315555811f));
+    addParameter (crossSeed = new juce::AudioParameterFloat ("crossSeed", // parameter ID
+                                                              "CrossSeed", // parameter name
+                                                              juce::NormalisableRange<float> (0.0f, 1.0f), // parameter range
+                                                              0.0f));
+    
+    
+    
+     
+     
+     
+     addParameter (dryOutGain = new juce::AudioParameterFloat ("dryOut", // parameter ID
+                                                               "DryOut", // parameter name
+                                                               juce::NormalisableRange<float> (0.0f, 1.0f), // parameter range
+                                                               0.0f));
+     addParameter (predelayOutGain = new juce::AudioParameterFloat ("predelayOut", // parameter ID
+                                                               "PredelayOut", // parameter name
+                                                               juce::NormalisableRange<float> (0.0f, 1.0f), // parameter range
+                                                               0.0f));
+     addParameter (earlyOutGain = new juce::AudioParameterFloat ("earlyOut", // parameter ID
+                                                               "EarlyOut", // parameter name
+                                                               juce::NormalisableRange<float> (0.0f, 1.0f), // parameter range
+                                                               0.77999997138977051f));
+     addParameter (mainOutGain = new juce::AudioParameterFloat ("mainOut", // parameter ID
+                                                               "MainOut", // parameter name
+                                                               juce::NormalisableRange<float> (0.0f, 1.0f), // parameter range
+                                                               0.74500006437301636f));
+
+
+    
+    
+    
+    addParameter (hiPassEnabled = new juce::AudioParameterFloat ("hiPassEnabled", // parameter ID
+                                                              "HiPassEnabled", // parameter name
+                                                              juce::NormalisableRange<float> (0.0f, 1.0f), // parameter range
+                                                              0.0f));
+    addParameter (lowPassEnabled = new juce::AudioParameterFloat ("lowPassEnabled", // parameter ID
+                                                              "LowPassEnabled", // parameter name
+                                                              juce::NormalisableRange<float> (0.0f, 1.0f), // parameter range
+                                                              0.0f));
+    addParameter (lowShelfEnabled = new juce::AudioParameterFloat ("lowShelfEnabled", // parameter ID
+                                                              "LowShelfEnabled", // parameter name
+                                                              juce::NormalisableRange<float> (0.0f, 1.0f), // parameter range
+                                                              0.0f));
+    addParameter (highShelfEnabled = new juce::AudioParameterFloat ("highShelfEnabled", // parameter ID
+                                                              "HighShelfEnabled", // parameter name
+                                                              juce::NormalisableRange<float> (0.0f, 1.0f), // parameter range
+                                                              0.0f));
+    addParameter (cutoffEnabled = new juce::AudioParameterFloat ("cutoffEnabled", // parameter ID
+                                                              "CutoffEnabled", // parameter name
+                                                              juce::NormalisableRange<float> (0.0f, 1.0f), // parameter range
+                                                              1.0f));
+    addParameter (lateStageTap = new juce::AudioParameterFloat ("lateStageTap", // parameter ID
+                                                              "LateStageTap", // parameter name
+                                                              juce::NormalisableRange<float> (0.0f, 1.0f), // parameter range
+                                                              1.0f));
+    addParameter (interpolation = new juce::AudioParameterFloat ("interpolation", // parameter ID
+                                                              "Interpolation", // parameter name
+                                                              juce::NormalisableRange<float> (0.0f, 1.0f), // parameter range
+                                                              0.0f));
+
+
+    
+    
+    
+    
+
+	     
     // https://github.com/ValdemarOrn/CloudSeed/blob/master/Factory%20Programs/Hyperplane.json
 
     reverb.SetParameter(Parameter::InputMix, 0.1549999862909317);
@@ -176,6 +411,66 @@ bool AudioPluginAudioProcessor::isBusesLayoutSupported (const BusesLayout& layou
 void AudioPluginAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer,
                                               juce::MidiBuffer& midiMessages)
 {
+	
+	
+    reverb.SetParameter(Parameter::InputMix, *inputMix);
+    reverb.SetParameter(Parameter::HighPass, *highPass);
+    reverb.SetParameter(Parameter::LowPass, *lowPass);
+    reverb.SetParameter(Parameter::PreDelay, *preDelay);
+
+    reverb.SetParameter(Parameter::DryOut, *dryOutGain);
+    reverb.SetParameter(Parameter::PredelayOut, *predelayOutGain);
+    reverb.SetParameter(Parameter::EarlyOut, *earlyOutGain);
+    reverb.SetParameter(Parameter::MainOut, *mainOutGain);
+    
+    reverb.SetParameter(Parameter::TapCount, *tapCount);
+    reverb.SetParameter(Parameter::TapLength, *tapLength);
+    reverb.SetParameter(Parameter::TapGain, *tapGain);
+    reverb.SetParameter(Parameter::TapDecay, *tapDecay);
+  
+    reverb.SetParameter(Parameter::DiffusionStages, *diffusionEnabled);
+    reverb.SetParameter(Parameter::DiffusionStages, *diffusionStages);
+    reverb.SetParameter(Parameter::DiffusionDelay, *diffusionDelay);
+    reverb.SetParameter(Parameter::DiffusionFeedback, *diffusionFeedback);
+    reverb.SetParameter(Parameter::EarlyDiffusionModAmount, *earlyDiffusionModAmount);
+    reverb.SetParameter(Parameter::EarlyDiffusionModRate, *earlyDiffusionModRate);
+    
+    reverb.SetParameter(Parameter::LineCount, *lineCount);
+    reverb.SetParameter(Parameter::LineDelay, *lineDelay);
+    reverb.SetParameter(Parameter::LineDecay, *lineDecay);
+    reverb.SetParameter(Parameter::LineModAmount, *lineModAmount);
+    reverb.SetParameter(Parameter::LineModRate, *lineModRate);
+    
+    reverb.SetParameter(Parameter::LateDiffusionEnabled, *lateDiffusionEnabled);
+    reverb.SetParameter(Parameter::LateDiffusionStages, *lateDiffusionStages);
+    reverb.SetParameter(Parameter::LateDiffusionDelay, *lateDiffusionDelay);
+    reverb.SetParameter(Parameter::LateDiffusionFeedback, *lateDiffusionFeedback);
+    reverb.SetParameter(Parameter::LateDiffusionModAmount, *lateDiffusionModAmount);
+    reverb.SetParameter(Parameter::LateDiffusionModRate, *lateDiffusionModRate);
+    
+    reverb.SetParameter(Parameter::PostLowShelfGain, *postLowShelfGain);
+    reverb.SetParameter(Parameter::PostLowShelfFrequency, *postLowShelfFrequency);
+    reverb.SetParameter(Parameter::PostHighShelfGain, *postHighShelfGain);
+    reverb.SetParameter(Parameter::PostHighShelfFrequency, *postHighShelfFrequency);
+    reverb.SetParameter(Parameter::PostCutoffFrequency, *postCutoffFrequency);
+    
+    reverb.SetParameter(Parameter::TapSeed,*tapSeed);
+    reverb.SetParameter(Parameter::DiffusionSeed, *diffusionSeed);
+    reverb.SetParameter(Parameter::DelaySeed, *delaySeed);
+    reverb.SetParameter(Parameter::PostDiffusionSeed, *postDiffusionSeed);
+    reverb.SetParameter(Parameter::CrossSeed, *crossSeed);
+
+    reverb.SetParameter(Parameter::HiPassEnabled, *hiPassEnabled);
+    reverb.SetParameter(Parameter::LowPassEnabled, *lowPassEnabled);
+    reverb.SetParameter(Parameter::LowShelfEnabled, *lowShelfEnabled);
+    reverb.SetParameter(Parameter::HighShelfEnabled, *highShelfEnabled);
+    reverb.SetParameter(Parameter::CutoffEnabled, *cutoffEnabled);
+    reverb.SetParameter(Parameter::LateStageTap, *lateStageTap);
+    reverb.SetParameter(Parameter::Interpolation, *interpolation);
+	
+	
+	
+	
     juce::ignoreUnused (midiMessages);
 
     juce::ScopedNoDenormals noDenormals;
