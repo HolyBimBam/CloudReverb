@@ -1,4 +1,4 @@
-# CloudSeed AudioUnit & VST3
+# CloudSeed AudioUnit & VST3 
 
 CloudSeed is an algorithmic reverbation plugin. 
 
