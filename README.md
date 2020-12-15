@@ -19,6 +19,15 @@ Since it was only a bare implementation without a Graphical User Interface I tri
 
 
 
+## To Do
+
+Make it work with Logic
+
+Show Correct Scale for nonlinear Parameter
+
+Fix Loading Error when Preset it already selected
+
+
 
 The Build did not work for me. I used XCode for that but i'll leave it here, maybe it will help somebody.
 
