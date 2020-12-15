@@ -10,6 +10,15 @@ Since it was only a bare implementation without a Graphical User Interface I tri
 
 
 
+The Build did not work for me but i'll leave it it, maybe it will help..
+
+
+You can Download Prebuilt Versions here:
+
+[VST3:](https://github.com/HolyBimBam/CloudSeed_AU_VST3/raw/master/exports/CloudSeed.vst3.zip)
+[AudioUnit:](https://github.com/HolyBimBam/CloudSeed_AU_VST3/raw/master/exports/CloudSeed.component.zip)
+
+
 
 ## How to Build
 ##### 1. clone the repository
