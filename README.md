@@ -34,9 +34,12 @@ Add Icons to Dials or a graphical Representation of what the individual Paramter
 
 
 ## How to Build
-##### 1. clone the repository
 
 The Build did not work for me. I used XCode for that but i'll leave it here, maybe it will help somebody.
+
+
+##### 1. clone the repository
+
 
 
 `git clone --recursive https://github.com/xunil-cloud/CloudSeed_AU_VST3.git`
