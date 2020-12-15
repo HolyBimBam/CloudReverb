@@ -1,19 +1,21 @@
-# CloudReverb
+# CloudSeed AudioUnit & VST3
 
-THis is an audio plugin for algorithmic reverb. The algorithm is borrowed from [CloudSeed VST](https://github.com/ValdemarOrn/CloudSeed) 
-by Valdemar Erlingsson. I try to rewrite the plugin with JUCE, so it can be also run on Linux and MacOS. For now, the GUI hasn't be functional, 
-I temporarily set the plugin preset to [Hyperplane](https://github.com/ValdemarOrn/CloudSeed/blob/master/Factory%20Programs/Hyperplane.json). 
-(You can change it from the [source code](https://github.com/xunil-cloud/CloudReverb/blob/master/plugin/PluginProcessor.cpp#L23), though.)
+CloudSeed is an algorithmic reverbation plugin. 
+The reverbation algorithm is written by Valdemar Erlingsson who also implemented a VST Version for Windows [CloudSeed VST](https://github.com/ValdemarOrn/CloudSeed) 
+
+I was studying the algorithm and tried to get it to work on my different Apple machines when I stumbled upon xunil-cloud's changes to use it with the JUCE Framework. Since it was only a bare implementation without a Graphical User Interface I tried my best in recreating Valdemars Windows Version.
+
+
 
 
 ## How to Build
 ##### 1. clone the repository
 
-`git clone --recursive https://github.com/xunil-cloud/CloudReverb.git`
+`git clone --recursive https://github.com/xunil-cloud/CloudSeed_AU_VST3.git`
 
 ##### 2. change directory into project folder and create build folder
 
-`cd CloudReverb `
+`cd CloudSeedAUVST3 `
 
 `mkdir build`
 
@@ -28,3 +30,5 @@ I temporarily set the plugin preset to [Hyperplane](https://github.com/ValdemarO
 ## Credit
 
 [CloudSeed VST](https://github.com/ValdemarOrn/CloudSeed) by Valdemar Erlingsson
+[CloudReverb Juce Implementation](https://github.com/xunil-cloud/CloudReverb) by xunil-cloud
+
