@@ -27,6 +27,8 @@ Show Correct Scale for nonlinear Parameter
 
 Fix Loading Error when Preset it already selected
 
+Add Icons to Dials or a graphical Representation of what the individual Paramtere does
+
 
 
 The Build did not work for me. I used XCode for that but i'll leave it here, maybe it will help somebody.
