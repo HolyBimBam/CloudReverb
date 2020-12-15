@@ -4,7 +4,7 @@
 
 CloudSeed is a artificial reverbation plugin based on the reverbation algorithm written by Valdemar Erlingsson who also implemented a VST Version for Windows [CloudSeed VST](https://github.com/ValdemarOrn/CloudSeed) 
 
-I was studying the algorithm and tried to get it to work on my different Apple machines when I stumbled upon xunil-cloud's changes to use it with the JUCE Framework. 
+I was studying the algorithm and tried to get it to work on my different Apple machines when I stumbled upon [xunil-cloud's changes](https://github.com/xunil-cloud/CloudReverb) to use it with the JUCE Framework. 
 
 Since it was only a bare implementation without a Graphical User Interface I tried my best in recreating Valdemars Windows Version.
 
