@@ -36,6 +36,9 @@ The Build did not work for me. I used XCode for that but i'll leave it here, may
 
 ## How to Build
 ##### 1. clone the repository
+The Build did not work for me. I used XCode for that but i'll leave it here, maybe it will help somebody.
+
+
 
 `git clone --recursive https://github.com/xunil-cloud/CloudSeed_AU_VST3.git`
 
