@@ -1,5 +1,7 @@
 # CloudSeed AudioUnit & VST3 
 
+![screenshot](https://github.com/HolyBimBam/CloudSeed_AU_VST3/blob/master/exports/screenshot.png)
+
 CloudSeed is an algorithmic reverbation plugin. 
 
 The reverbation algorithm is written by Valdemar Erlingsson who also implemented a VST Version for Windows [CloudSeed VST](https://github.com/ValdemarOrn/CloudSeed) 
