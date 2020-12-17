@@ -29,6 +29,8 @@ Fix Loading Error when Preset it already selected
 
 Add Icons to Dials or a graphical Representation of what the individual Paramtere does
 
+Buy JUCE Licence and Remove Popup
+
 
 
 
