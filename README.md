@@ -29,15 +29,15 @@ Since it was only a bare implementation without a Graphical User Interface I tri
 
 ## To Do
 
-Make it work with Logic
+* Make it work with Logic
 
-Show Correct Scale for nonlinear Parameter
+* Show Correct Scale for nonlinear Parameter
 
-Fix Loading Error when Preset it already selected
+* Fix Loading Error when Preset it already selected
 
-Add Icons to Dials or a graphical Representation of what the individual Paramtere does
+* Add Icons to Dials or a graphical Representation of what the individual Paramtere does
 
-Buy JUCE Licence and Remove Popup
+* Buy JUCE Licence and Remove Popup
 
 
 
