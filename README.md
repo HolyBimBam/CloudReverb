@@ -1,4 +1,4 @@
-# CloudSeed AudioUnit & VST3 
+# CloudSeed AudioUnit & VST3 (for Mac)
 
 ![screenshot](https://github.com/HolyBimBam/CloudSeed_AU_VST3/blob/master/exports/screenshot.png)
 
@@ -21,8 +21,7 @@ Since it was only a bare implementation without a Graphical User Interface I tri
 
 
 
-
-### You can Download Prebuilt Versions here:
+## You can Download Prebuilt Versions here:
 
 [Releases Page](https://github.com/HolyBimBam/CloudSeed_AU_VST3/releases)
 
