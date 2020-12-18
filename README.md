@@ -21,7 +21,7 @@ Since it was only a bare implementation without a Graphical User Interface I tri
 
 
 
-## You can Download Prebuilt Versions here:
+## You can Download Prebuilt a Versions here:
 
 [Releases Page](https://github.com/HolyBimBam/CloudSeed_AU_VST3/releases)
 
