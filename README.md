@@ -2,6 +2,17 @@
 
 ![screenshot](https://github.com/HolyBimBam/CloudSeed_AU_VST3/blob/master/exports/screenshot.png)
 
+
+## Table of contents
+* [General info](#general-info)
+* [Download](https://github.com/HolyBimBam/CloudSeed_AU_VST3/releases)
+* [ToDo](#to-do)
+* [How to Build](#how-to-build)
+* [Credits](#credits)
+
+
+## General Info
+
 CloudSeed is a artificial reverbation plugin based on the reverbation algorithm written by Valdemar Erlingsson who also implemented a VST Version for Windows [CloudSeed VST](https://github.com/ValdemarOrn/CloudSeed) 
 
 I was studying the algorithm and tried to get it to work on my different Apple machines when I stumbled upon [xunil-cloud's changes](https://github.com/xunil-cloud/CloudReverb) to use it with the JUCE Framework. 
@@ -11,7 +22,7 @@ Since it was only a bare implementation without a Graphical User Interface I tri
 
 
 
-#### You can Download Prebuilt Versions here:
+### You can Download Prebuilt Versions here:
 
 [Releases Page](https://github.com/HolyBimBam/CloudSeed_AU_VST3/releases)
 
@@ -58,7 +69,7 @@ The Build did not work for me. I used XCode for that but i'll leave it here, may
 
 `make`
 
-## Credit
+## Credits
 
 [CloudSeed VST](https://github.com/ValdemarOrn/CloudSeed) by Valdemar Erlingsson
 
