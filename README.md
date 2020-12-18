@@ -8,7 +8,7 @@
 * [Download](https://github.com/HolyBimBam/CloudSeed_AU_VST3/releases)
 * [Documentation](#documentation)
 * [How to Build](#how-to-build)
-* [ToDo](#to-do)
+* [To Do](#to-do)
 * [Credits](#credits)
 
 
@@ -65,13 +65,9 @@ The Build did not work for me. I used XCode for that but i'll leave it here, may
 ## To Do
 
 * Make it work with Logic
-
 * Show Correct Scale for nonlinear Parameter
-
 * Fix Loading Error when Preset it already selected
-
 * Add Icons to Dials or a graphical Representation of what the individual Paramtere does
-
 * Buy JUCE Licence and Remove Popup
 
 
