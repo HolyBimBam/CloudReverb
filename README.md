@@ -29,7 +29,7 @@ Since it was only a bare implementation without a Graphical User Interface I tri
 
 
 ## Documentation
-For the Documentation head over to the original Documentation Page to get an overview of the user interface and an explanation of the reverberation kernel.
+For the Documentation head over to the [original Documentation Page](https://github.com/ValdemarOrn/CloudSeed/tree/master/Documentation) to get an overview of the user interface and an explanation of the reverberation kernel.
 
 
 
