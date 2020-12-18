@@ -1,4 +1,4 @@
-# CloudSeed AudioUnit & VST3 (for Mac)
+# Cloud Seed AudioUnit & VST3 (for Mac)
 
 ![screenshot](https://github.com/HolyBimBam/CloudSeed_AU_VST3/blob/master/exports/screenshot.png)
 
