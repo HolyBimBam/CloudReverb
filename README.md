@@ -6,8 +6,9 @@
 ## Table of contents
 * [General info](#general-info)
 * [Download](https://github.com/HolyBimBam/CloudSeed_AU_VST3/releases)
-* [ToDo](#to-do)
+* [Documentation](#documentation)
 * [How to Build](#how-to-build)
+* [ToDo](#to-do)
 * [Credits](#credits)
 
 
@@ -21,24 +22,14 @@ Since it was only a bare implementation without a Graphical User Interface I tri
 
 
 
-## You can Download Prebuilt a Versions here:
+## Download
 
 [Releases Page](https://github.com/HolyBimBam/CloudSeed_AU_VST3/releases)
 
 
 
-## To Do
-
-* Make it work with Logic
-
-* Show Correct Scale for nonlinear Parameter
-
-* Fix Loading Error when Preset it already selected
-
-* Add Icons to Dials or a graphical Representation of what the individual Paramtere does
-
-* Buy JUCE Licence and Remove Popup
-
+## Documentation
+For the Documentation head over to the original Documentation Page to get an overview of the user interface and an explanation of the reverberation kernel.
 
 
 
@@ -67,6 +58,25 @@ The Build did not work for me. I used XCode for that but i'll leave it here, may
 `cmake ../ -B .` (-B option specify a build directory)
 
 `make`
+
+
+
+
+## To Do
+
+* Make it work with Logic
+
+* Show Correct Scale for nonlinear Parameter
+
+* Fix Loading Error when Preset it already selected
+
+* Add Icons to Dials or a graphical Representation of what the individual Paramtere does
+
+* Buy JUCE Licence and Remove Popup
+
+
+
+
 
 ## Credits
 
