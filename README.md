@@ -24,7 +24,7 @@ Since it was only a bare implementation without a Graphical User Interface I tri
 
 ## Download
 
-[Releases Page](https://github.com/HolyBimBam/CloudSeed_AU_VST3/releases)
+Download the latest version of Cloud Seed for Mac from the [Releases Page](https://github.com/HolyBimBam/CloudSeed_AU_VST3/releases)
 
 
 
