@@ -77,6 +77,5 @@ The Build did not work for me. I used XCode for that but i'll leave it here, may
 ## Credits
 
 [CloudSeed VST](https://github.com/ValdemarOrn/CloudSeed) by Valdemar Erlingsson
-
 [CloudReverb Juce Implementation](https://github.com/xunil-cloud/CloudReverb) by xunil-cloud
 
